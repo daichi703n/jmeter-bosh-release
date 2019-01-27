@@ -20,6 +20,8 @@ module JMeterTornado
       simple_delay = settings['configuration']['simple_delay']
       gaussian_deviation = settings['configuration']['gaussian_deviation']
       gaussian_constant_delay_offset = settings['configuration']['gaussian_constant_delay_offset']
+      constant_timer_value = settings['configuration']['constant_timer']
+      constant_throughput_timer_value = settings['configuration']['constant_throughput']
 
       test do
         threads count: thread_count,
@@ -31,6 +33,10 @@ module JMeterTornado
             think_time simple_delay
           elsif gaussian_deviation != -1 && gaussian_constant_delay_offset != -1
             think_time gaussian_constant_delay_offset, gaussian_deviation
+          elsif constant_timer_value != -1
+            constant_timer(delay: constant_timer_value)
+          elsif constant_throughput_timer_value != -1
+            constant_throughput_timer(value: constant_throughput_timer_value)
           end
 
           targets = settings['targets']

@@ -103,6 +103,18 @@ properties:
 
         Start with Ramp-up = number of threads and adjust up or down as needed."
 
+  wizard.configuration.constant_timer:
+    description: xxx
+    default: -1
+    help: |
+      xxx
+
+  wizard.configuration.constant_throughput:
+    description: xxx
+    default: -1
+    help: |
+      xxx
+
 # ==================================================================================================
 # ==================================================================================================
 # Dashboard

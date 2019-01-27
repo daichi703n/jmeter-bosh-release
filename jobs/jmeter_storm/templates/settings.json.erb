@@ -48,6 +48,8 @@ if_p('wizard.targets') do |targets|
   params["configuration"]["simple_delay"] = p("wizard.configuration.simple_delay") # in milliseconds
   params["configuration"]["gaussian_deviation"] = p("wizard.configuration.gaussian_random_timer.deviation") # in milliseconds
   params["configuration"]["gaussian_constant_delay_offset"] = p("wizard.configuration.gaussian_random_timer.constant_delay_offset") # in milliseconds
+  params["configuration"]["constant_timer"] = p("wizard.configuration.constant_timer") # in milliseconds
+  params["configuration"]["constant_throughput"] = p("wizard.configuration.constant_throughput") # in samples per minute
 end
 
 JSON.dump(params)
